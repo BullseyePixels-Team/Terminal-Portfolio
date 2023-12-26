@@ -47,7 +47,7 @@ input.addEventListener("keypress", function (event) {
             k++;
 
             if (ch === "help()") {
-                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => whois()                   |     Who We Are? ß => secrets()            |     Find the password ß => clear()                    |     Clear terminal ß => projects()          |     View projects ß => insta('name')    | open instagram ß");
+                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => whois()                   |     Who We Are? ß => secrets()            |     Find the password ß => clear()                    |     Clear terminal ß => projects()          |     View projects ß => insta('name')    | open instagram ß => history()              | show the history of searches ß");
             }
             else if (ch === "whois()") {
                 typeWriterD(consoleElement, "Mohamed Mnasria & Yassine Fouzai's portfolio.");
