@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
+
+*{
+    margin : 0;
+    padding: 0;
+    background-color: black;
+    color: rgb(92, 201, 92);
+    text-shadow: limegreen 0px 0px 5px;
+    font-size: 25px;
+    cursor: none;
+}
+pre{
+    font-size: 47%;
+}
+body{
+    display: flex;
+    overflow: hidden;
+}
+aside{
+    width: 20vw;
+    height: 100vh;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+main{
+    border: 3px solid rgb(20, 131, 57);
+    border-top: none;
+    width: 60vw;
+    height:100vh;
+    
+}
+div{
+    width:100%;
+    text-align: center;
+}
+p{
+    text-shadow: limegreen 0px 0px 20px;
+}
+.logo{
+    margin-top: 5%;
+}
+.paragraphe{
+    font-size: 100%;
+    margin-top: 5%;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+a{
+    outline: none;
+    border-color: transparent;
+}
+a::selection{
+    outline: none;
+    border-color: transparent;
+}
+@media(max-width: 1304px){
+    pre{
+        font-size: 45%;
+    } 
+}
+@media(min-width: 1305px){
+    pre{
+        font-size: 70%;
+    }
+}
+
