@@ -1,67 +1,62 @@
 let input = document.getElementById("input");
 let greet = document.getElementById("greet");
 let cmd = document.getElementById("cmd");
-let console = document.getElementById("console");
+let consoleElement = document.getElementById("console");
 
 
-function typeWriter(txt) {
-    let i = 0;
-    let speed = txt.length * .2;
-    if(i < txt.length){
-        document.getElementById("greet").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    }
-}
-
-var i = 0;
 var txt = "/* Welcome to the Website terminal-Like You can start by typing help() in the command line argument */";
-var speed = txt.length * .2;
-    
-    function typeWriterD() {
-        if(i < txt.length){
-            document.getElementById("greet").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriterD, speed);
-            
-        }  
-}
-typeWriterD();
 
+function typeWriterD(element, text) {
+    var j = 0;
+    var textLength = text.length;
+    var typingSpeed = 10;
 
-
-input.addEventListener("keypress", function(event){
-    if(event.key === "Enter"){
-        ch = input.value;
-        if (ch != ""){
-            document.getElementById("input").value = "";
-            cmd.innerHTML += ">>" + ch + "</br>"  ;
-        }
-
-        if (ch === "help()"){
-            console.innerHTML += "these are the function that you can use:"+ "<br>"+
-                                 "=> whois()            |     Who We Are? Who am I?    " + "<br>"+
-                                 "=> secrets()     |     Find the password" + "<br>"+
-                                 "=> clear()             |     Clear terminal " + "<br>"+
-                                 "=> projects()   |     View projects View projects" + "<br>"+
-                                 ">_";
-        }
-        else if(ch === "whois()"){
-            console.innerHTML += "Mohamed Mnasria & Yassine Fouzai 's portfolio. " + "</br>" + ">_";
-        }
-        else if(ch == "projects()"){
-            console.innerHTML += "Nothing right now.." + "</br>" + ">_";
-        }
-        else if(ch == "clear()"){
-            console.innerHTML = ">_";
-            cmd.innerHTML = "";
-        }
-        else if(ch == "secrets()"){
-            console.innerHTML += "???" + "</br>" + ">_";
+    function type() {
+        if (j < textLength) {
+            if(text.charAt(j) === "ß"){
+                element.innerHTML += "<br>";
+                j = j+1;
+            }
+            element.innerHTML += text.charAt(j);
+            j++;
+            setTimeout(type, typingSpeed);
         }
         else{
-            cmd.innerHTML += ">> Undefined Command. Please try a valid one." + "</br>";
+            if (element === consoleElement){
+                consoleElement.innerHTML += "<br> >_   ";
+            }
+            
+        }
+    }
+
+    type();
+}
+
+typeWriterD(greet, txt);
+
+input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        ch = input.value;
+        if (ch != "") {
+                document.getElementById("input").value = "";
+                cmd.innerHTML += ">>" + ch + "<br>";
+            
+
+            if (ch === "help()") {
+                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => whois()             |     Who We Are? ß => secrets()      |     Find the password ß => clear()              |     Clear terminal ß => projects()    |     View projects ß");
+            } else if (ch === "whois()") {
+                typeWriterD(consoleElement, "Mohamed Mnasria & Yassine Fouzai's portfolio.");
+            } else if (ch == "projects()") {
+                typeWriterD(consoleElement, "Nothing right now..");
+            } else if (ch == "clear()") {
+                consoleElement.innerHTML = ">_";
+                cmd.innerHTML = "";
+                
+            } else if (ch == "secrets()") {
+                typeWriterD(consoleElement, "???");
+            } else {
+                typeWriterD(cmd, ">> Undefined Command. Please try a valid one. ß");
+            }
         }
     }
 });
-
