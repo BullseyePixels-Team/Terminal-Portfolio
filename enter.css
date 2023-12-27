@@ -61,4 +61,13 @@ a::selection{
         font-size: 70%;
     }
 }
-
+strong{
+    color: rgb(201, 92, 92);
+    text-shadow: red 0px 0px 5px;
+    font-size: 25px;
+}
+span{
+    color: rgb(92, 201, 194);
+    text-shadow: rgb(32, 146, 178) 0px 0px 20px;
+    background-color: transparent;
+}

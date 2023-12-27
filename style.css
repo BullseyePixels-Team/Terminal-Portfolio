@@ -17,8 +17,15 @@ body{
     justify-content: space-between;
     cursor: none;
     user-select:none;
-    user-zoom: none;
-    
+    user-zoom: none;   
+}
+strong,.redier{
+    color: rgb(201, 92, 92);
+    text-shadow: red 0px 0px 5px;
+}
+span{
+    color: rgb(92, 201, 194);
+    text-shadow: rgb(32, 146, 178) 0px 0px 5px;
 }
 div{
     margin:.1%;

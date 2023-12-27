@@ -16,7 +16,7 @@ let scdpa = document.getElementById("ascii2")
 function typeWriter(element) {
     var j = 0;
     var textLength = 2000;
-    var typingSpeed = 2;
+    var typingSpeed = 1.5;
 
     function type() {
         if (j < textLength) {

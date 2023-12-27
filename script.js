@@ -4,7 +4,7 @@ let cmd = document.getElementById("cmd");
 let consoleElement = document.getElementById("console");
 
 
-var txt = "/* Welcome to the Website terminal-Like You can start by typing help() in the command line argument */";
+var txt = "/* Welcome to the Website terminal-Like You can start by typing þ help() ◙ in the command line argument */";
 
 function typeWriterD(element, text) {
     var j = 0;
@@ -16,6 +16,14 @@ function typeWriterD(element, text) {
             if(text.charAt(j) === "ß"){
                 element.innerHTML += "<br>";
                 j = j+1;
+            }
+            /*if(text.charAt(j) === "þ"){
+                element.innerHTML += "<span>";
+                j = j + 1;
+            }*/
+            if(text.charAt(j) === "◙"){
+                element.innerHTML += "</span>";
+                j = j + 1;
             }
             element.innerHTML += text.charAt(j);
             j++;
@@ -31,7 +39,6 @@ function typeWriterD(element, text) {
 
     type();
 }
-
 typeWriterD(greet, txt);
 
 input.addEventListener("keypress", function (event) {
