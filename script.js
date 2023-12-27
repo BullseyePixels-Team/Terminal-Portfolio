@@ -47,7 +47,7 @@ input.addEventListener("keypress", function (event) {
             k++;
 
             if (ch === "help()") {
-                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => whois()                   |     Who We Are? ß => secrets()            |     Find the password ß => clear()                    |     Clear terminal ß => projects()          |     View projects ß => insta('name')    | open instagram ß => history()              | show the history of searches ß");
+                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => whois()                   |     Who We Are? ß => secrets()            |     Find the password ß => clear()                    |     Clear terminal ß => projects()          |     View projects ß => insta('name')    | open instagram ß => history()              | show the history of searches ß => insta()                    | show names of team members ß");
             }
             else if (ch === "whois()") {
                 typeWriterD(consoleElement, "Mohamed Mnasria & Yassine Fouzai's portfolio.");
@@ -62,7 +62,7 @@ input.addEventListener("keypress", function (event) {
             }   
             else if (ch === "secrets()") {
                 typeWriterD(consoleElement, "???");
-            }   
+            } 
             else if (ch === 'insta("mohamed")' || ch === "insta('mohamed')"){
                 typeWriterD(consoleElement, "opening Mohamed Mnasria's instagram...");
                 setTimeout(() => {window.open("https://www.instagram.com/mhmdmnasria_2006/", "_blank");}, 1000);
@@ -73,7 +73,9 @@ input.addEventListener("keypress", function (event) {
             }   
             else if (ch === 'history()'){
                 typeWriterD(consoleElement, his);
-            }   
+            }else if (ch === "insta()"){
+                typeWriterD(consoleElement, "here's how you can move to the insta of: ß ß => mohamed  : insta('mohamed') ß => yassin         : insta('yassin') ß");
+            }  
             else {
                 typeWriterD(cmd, ">> Undefined Command. Please try a valid one. ß");
             }
