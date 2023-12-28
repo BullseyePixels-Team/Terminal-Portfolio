@@ -12,7 +12,7 @@
 }
 body{
     outline: none;
-    overflow: hidden;
+    overflow-y: scroll;
     display: flex;
     justify-content: space-between;
     cursor: none;
@@ -21,17 +21,16 @@ body{
 }
 strong,.redier{
     color: rgb(201, 92, 92);
-    text-shadow: red 0px 0px 5px;
+    text-shadow: red 0px 0px 10px;
 }
 span{
     color: rgb(92, 201, 194);
-    text-shadow: rgb(32, 146, 178) 0px 0px 5px;
+    text-shadow: rgb(32, 146, 178) 0px 0px 10px;
 }
 div{
     margin:.1%;
     height:100vh;
     width :49.5vw;
-    border: 2px solid rgb(0, 0, 0);
 }
 input{
     outline: none;
@@ -43,4 +42,24 @@ input::selection{
     outline: none;
     border-color: transparent;
     width: 90%;
+}
+#logo{
+    border: 2px dashed rgb(80, 214, 136);
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px 10px;
+    color: rgb(35, 219, 127);
+    text-shadow: rgb(9, 200, 9) 0px 0px 50px;
+    font-size: 15px;
+    font-family: monospace;
+}
+@media(max-width: 1304px){
+    #logo{
+        font-size: 45%;
+    } 
+}
+@media(min-width: 1305px){
+    #logo{
+        font-size: 70%;
+    }
 }

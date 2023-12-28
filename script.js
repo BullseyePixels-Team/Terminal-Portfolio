@@ -34,7 +34,7 @@ function typeWriterD(element, text) {
             setTimeout(type, typingSpeed);
         }
         else{
-            if (element === consoleElement){
+            if (element === consoleElement ||element === logo){
                 consoleElement.innerHTML += "<br> >_   ";
             }
             
@@ -63,7 +63,7 @@ input.addEventListener("keypress", function (event) {
             k++;
 
             if (ch === "help()") {
-                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => þwhois()◙                   |    Who We Are? ß => þsecrets()◙            |     Find the password ß => þclear()◙                    |     Clear terminal ß => þprojects()◙          |     View projects ß => þhistory()◙              | show the search history ß => þsocial()◙                   | show socials of members ß");
+                typeWriterD(consoleElement, "these are the functions that you can use: ß ß => þwhois()◙                   |    Who We Are? ß => þsecrets()◙            |     Find the password ß => þclear()◙                    |     Clear terminal ß => þprojects()◙          |     View projects ß => þhistory()◙              | show the search history ß => þsocial()◙                   | show socials of members ß => þlogo()◙                       | draw our logo ß");
             }
             else if (ch === "whois()") {
                 typeWriterD(consoleElement, "Mohamed Mnasria & Yassine Fouzai's portfolio.");
@@ -77,36 +77,39 @@ input.addEventListener("keypress", function (event) {
                 
             }   
             else if (ch === "secrets()") {
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, "???");
             } 
             else if (ch === 'git("mohamed")' || ch === "git('mohamed')"){
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, "opening Mohamed Mnasria's github...");
                 setTimeout(() => {window.open("https://github.com/MhmdMnasria", "_blank");}, 1000);
             }
             else if (ch === 'insta("mohamed")' || ch === "insta('mohamed')"){
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, "opening Mohamed Mnasria's instagram...");
                 setTimeout(() => {window.open("https://www.instagram.com/mhmdmnasria_2006/", "_blank");}, 1000);
             }
             else if (ch === 'git("yassin")' || ch === "git('yassin')"){
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, "opening Yassin Fouzai's github...");
                 setTimeout(() => {window.open("https://github.com/yassinfouzai", "_blank");}, 1000);
             }    
             else if (ch === 'insta("yassin")' || ch === "insta('yassin')"){
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, "opening Yassin Fouzai's instagram...");
                 setTimeout(() => {window.open("https://www.instagram.com/its_da_foz/", "_blank");}, 1000);
             }   
             else if (ch === 'history()'){
-                consoleElement.innerHTML = ">_";
                 typeWriterD(consoleElement, his);
-            }else if (ch === "social()"){
-                consoleElement.innerHTML = ">_";
-                typeWriterD(consoleElement, "here's the social networks: ß ß => mohamed  :ß - insta('mohamed') ß - git('mohamed') ß ß => mohamed  :ß - insta('yassin') ß - git('yassin') ß");
-            }  
+            }
+            else if (ch === "social()"){
+                typeWriterD(consoleElement, "here's the social networks: ß ß => mohamed  :ß - þinsta(◙'mohamed'þ)◙ ß - þgit(◙'mohamed'þ)◙ ß ß => yassin  :ß - þinsta(◙'yassin'þ)◙ ß - þgit(◙'yassin'þ)◙ ß");
+            }else if (ch === "logo()") {
+                // ASCII art for your logo
+                const logoAscii = `______  _     _               _______ _______ __   __ _______ ß|_____] |     | |      |      |______ |______   \\_/   |______ ß|_____] |_____| |_____ |_____ ______| |______    |    |______ ß _____  _____ _     _ _______        _______ ß|_____]   |    \\___/  |______ |      |______ ß|       __|__ _/   \\_ |______ |_____ ______|
+                `;
+                logo = document.createElement("pre");
+                logo.id = "logo";
+                consoleElement.appendChild(logo);
+                typeWriterD(logo, logoAscii);
+            }
+            
             else {
                 typeWriterD(cmd, ">> ►Undefined Command. Please try a valid one.◙ ß");
             }
