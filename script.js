@@ -77,8 +77,31 @@ input.addEventListener("keypress", function (event) {
                 
             }   
             else if (ch === "secrets()") {
-                typeWriterD(consoleElement, "???");
-            } 
+                // Create an input field
+                const passwordInput = document.createElement("input");
+                passwordInput.type = "password";
+                passwordInput.placeholder = "Enter the password (4-digits)";
+                passwordInput.id = "passwordInput";
+            
+                consoleElement.appendChild(passwordInput);
+                passwordInput.focus();
+                
+                passwordInput.addEventListener("keypress", function (event) {
+                    if (event.key === "Enter") {
+                        
+                        event.preventDefault();
+                        const enteredPassword = passwordInput.value.trim();
+                        if (enteredPassword === "7610") {
+                            passwordInput.placeholder = "succeed";
+                            typeWriterD(consoleElement, "Congratulations! You guessed the password    þ(which is 7610)◙ . You won! ß");
+                        } else {
+                            passwordInput.placeholder = "failed";
+                            typeWriterD(consoleElement, "Wrong password. þTry again◙. ß");
+                        }
+                        input.focus();
+                    }
+                });
+            }
             else if (ch === 'git("mohamed")' || ch === "git('mohamed')"){
                 typeWriterD(consoleElement, "opening Mohamed Mnasria's github...");
                 setTimeout(() => {window.open("https://github.com/MhmdMnasria", "_blank");}, 1000);
